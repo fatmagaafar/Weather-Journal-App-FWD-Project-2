@@ -12,7 +12,7 @@ const apiKey = "79507136dcf16377b6e098bc04cc8866&units=imperial";
 // Create a new date instance dynamically with JS
 let d = new Date();
 // let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear(); //the First submision => the day and the month are just swiped and it gives "10.12.2022" which 10 is the month and 12 is the day
-let newDate = d.getDate() + "." + d.getMonth() + "." + d.getFullYear(); // here i just swipe the day and the month 
+let newDate = d.getDate() + "." + d.getMonth() + "." + d.getFullYear(); // here i just swipe the day and the month it gives "12.10.2022"
 
 // Event listener to add function to existing HTML DOM element
 generate.addEventListener("click", onGenerateClick);
