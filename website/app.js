@@ -11,7 +11,8 @@ const apiKey = "79507136dcf16377b6e098bc04cc8866&units=imperial";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+// let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear(); //the First submision => the day and the month are just swiped and it gives "10.12.2022" which 10 is the month and 12 is the day
+let newDate = d.getDate() + "." + d.getMonth() + "." + d.getFullYear(); // here i just swipe the day and the month 
 
 // Event listener to add function to existing HTML DOM element
 generate.addEventListener("click", onGenerateClick);
@@ -86,18 +87,15 @@ const get = async (url) => {
 /* Function to update the interface */
 const updateUI = async (data) => {
     const res = await data;
-    if(res.newDate){
-        document.querySelector('#error').style.display ="block";
-    date.innerHTML=`Date: ${res.newDate}`;
-    temp.innerHTML=`Temperature: ${res.temp}`;
-    content.innerHTML=`Your feelings: ${res.feelings}`;
-    document.querySelector('#error').style.display ="none";
+    if (res.newDate) {
+        document.querySelector("#error").style.display = "block";
+        date.innerHTML = `Date: ${res.newDate}`;
+        temp.innerHTML = `Temperature: ${res.temp}`;
+        content.innerHTML = `Your feelings: ${res.feelings}`;
+        document.querySelector("#error").style.display = "none";
+    } else {
+        document.querySelector("#error").style.display = "none";
+        document.querySelector("#error").style.display = "block";
+        document.querySelector("#error").innerHTML = res.message;
     }
-    else{
-        document.querySelector('#error').style.display ="none";
-        document.querySelector('#error').style.display ="block";
-        document.querySelector('#error').innerHTML=res.message;
-    }
-
-
 };
