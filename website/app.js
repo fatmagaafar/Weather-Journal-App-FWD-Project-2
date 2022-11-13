@@ -11,7 +11,6 @@ const apiKey = "79507136dcf16377b6e098bc04cc8866&units=imperial";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-// let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear(); /
 let newDate = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear(); 
 
 // Event listener to add function to existing HTML DOM element
